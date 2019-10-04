@@ -724,6 +724,6 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'Dashboard'
 }
 </script>

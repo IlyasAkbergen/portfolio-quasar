@@ -44,7 +44,7 @@ module.exports = function (ctx) {
       all: 'auto',
 
       components: [
-        'QSelect',
+        'QSelect'
       ],
       directives: [],
 
@@ -59,7 +59,7 @@ module.exports = function (ctx) {
     build: {
       scopeHoisting: true,
       // vueRouterMode: 'history',
-      // showProgress: false,
+      showProgress: true,
       // gzip: true,
       // analyze: true,
       // preloadChunks: false,
@@ -88,7 +88,7 @@ module.exports = function (ctx) {
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: [],
+    animations: 'all',
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
