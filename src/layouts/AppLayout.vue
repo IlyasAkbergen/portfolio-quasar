@@ -28,10 +28,10 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-2"
+      content-class="bg-grey-2 q-pl-sm"
     >
-      <q-list>
-        <q-item clickable @click.native="$router.push('/')" :active="$route.path === '/'">
+      <q-list class="q-mt-md">
+        <q-item clickable @click.native="goTo('/')" :active="isCurrent('/')" :disabled="isCurrent('/')">
           <q-item-section avatar>
             <q-icon name="home" />
           </q-item-section>
@@ -39,7 +39,7 @@
             <q-item-label>{{ $t('nav.home_page') }}</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable @click.native="$router.push('/dashboard')" :active="$route.path === '/dashboard'">
+        <q-item clickable @click.native="goTo('/dashboard')" :active="isCurrent('/dashboard')" :disabled="isCurrent('/dashboard')">
           <q-item-section avatar>
             <q-icon name="dashboard" />
           </q-item-section>
@@ -47,7 +47,7 @@
             <q-item-label>{{ $t('nav.dashboard') }}</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable @click.native="$router.push('/about')" :active="$route.path === '/about'">
+        <q-item clickable @click.native="goTo('/about')" :active="isCurrent('/about')" :disabled="isCurrent('/about')">
           <q-item-section avatar>
             <q-icon name="person" />
           </q-item-section>
@@ -56,7 +56,7 @@
           </q-item-section>
         </q-item>
       </q-list>
-      <q-list class="fixed-bottom-left q-mb-lg">
+      <q-list class="fixed-bottom-left q-mb-lg q-pl-sm">
         <q-item header class="fa-header">{{ $t('contacts.links') }}</q-item>
         <q-item clickable tag="a" target="_blank" href="https://github.com/ilyasakbergen/portfolio-quasar">
           <q-item-section avatar>
@@ -100,7 +100,7 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import LocaleSelection from '../components/LocaleSelection'
 export default {
   name: 'AppLayout',
@@ -111,14 +111,17 @@ export default {
     ])
   },
   methods: {
-    ...mapMutations('app', [
-      'setLocale'
-    ]),
     ...mapActions('app', [
       'changeLocale'
     ]),
     localeSelected (locale) {
       this.changeLocale({ 'localeValue': locale, 'i18n': this.$i18n })
+    },
+    goTo (path) {
+      if (path !== this.$route.path) this.$router.push(path)
+    },
+    isCurrent (path) {
+      return this.$route.path === path
     }
   },
   components: {
