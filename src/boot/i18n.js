@@ -10,6 +10,11 @@ const messages = {
     contacts: {
       mail_to_me: 'Связаться со мной по почте',
       links: 'Ссылки, контакты'
+    },
+    nav: {
+      home_page: 'Главная',
+      dashboard: 'Дэшборд',
+      about: 'О себе'
     }
   },
   'en': {
@@ -20,6 +25,11 @@ const messages = {
     contacts: {
       mail_to_me: 'Send email to me',
       links: 'Essential links'
+    },
+    nav: {
+      home_page: 'Home',
+      dashboard: 'Dashboard',
+      about: 'About myself'
     }
   },
   'kz': {
@@ -30,6 +40,11 @@ const messages = {
     contacts: {
       mail_to_me: 'email жиберу',
       links: 'Ссылкалар'
+    },
+    nav: {
+      home_page: 'Бастапкы',
+      dashboard: 'Дэшборд',
+      about: 'Озiм жайлы'
     }
   }
 }

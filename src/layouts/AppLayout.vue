@@ -31,9 +31,28 @@
       content-class="bg-grey-2"
     >
       <q-list>
-        <q-item @click.native="$router.push('/dashboard')">
+        <q-item clickable @click.native="$router.push('/')" :active="$route.path === '/'">
+          <q-item-section avatar>
+            <q-icon name="home" />
+          </q-item-section>
           <q-item-section>
-            <q-item-label>Dashboard</q-item-label>
+            <q-item-label>{{ $t('nav.home_page') }}</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click.native="$router.push('/dashboard')" :active="$route.path === '/dashboard'">
+          <q-item-section avatar>
+            <q-icon name="dashboard" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ $t('nav.dashboard') }}</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click.native="$router.push('/about')" :active="$route.path === '/about'">
+          <q-item-section avatar>
+            <q-icon name="person" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ $t('nav.about') }}</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
@@ -70,7 +89,12 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <transition name="transitions"
+                  enter-active-class="animated fadeIn"
+                  leave-active-class="animated fadeOut"
+                  mode="out-in">
+        <router-view/>
+      </transition>
     </q-page-container>
   </q-layout>
 </template>

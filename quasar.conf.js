@@ -44,7 +44,8 @@ module.exports = function (ctx) {
       all: 'auto',
 
       components: [
-        'QSelect'
+        'QSelect',
+        'QCircularProgress'
       ],
       directives: [],
 
@@ -58,7 +59,7 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: 'history',
       showProgress: true,
       // gzip: true,
       // analyze: true,

@@ -17,5 +17,6 @@ export default {
       label: 'Казакша',
       value: 'kz'
     }
-  ]
+  ],
+  page_loading: false
 }

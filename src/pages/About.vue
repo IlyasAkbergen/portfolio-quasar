@@ -1,13 +1,13 @@
 <template>
   <q-page class="flex flex-center" v-show="!page_loading">
-    <h1>{{ $t('app.welcomeMsg') }}</h1>
+    <h2>{{ $t('nav.about') }}</h2>
   </q-page>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'PageIndex',
+  name: 'About',
   computed: {
     ...mapState('app', [
       'page_loading'
