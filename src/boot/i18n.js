@@ -5,7 +5,9 @@ const messages = {
   'ru': {
     app: {
       welcomeMsg: 'Добро пожаловать в веб-приложение на Vue.js (фреймворк Quasar)',
-      name: 'Портфолио'
+      name: 'Портфолио',
+      username: 'Ваше имя',
+      submit: 'Сохранить'
     },
     contacts: {
       mail_to_me: 'Связаться со мной по почте',
@@ -20,7 +22,9 @@ const messages = {
   'en': {
     app: {
       welcomeMsg: 'Welcome to Vue.js App (Quasar framework)',
-      name: 'Quasar app, portfolio'
+      name: 'Quasar app, portfolio',
+      username: 'Your name',
+      submit: 'Save'
     },
     contacts: {
       mail_to_me: 'Send email to me',
@@ -35,7 +39,9 @@ const messages = {
   'kz': {
     app: {
       welcomeMsg: 'Казакша уэлком',
-      name: 'Портфолио (кз)'
+      name: 'Портфолио (кз)',
+      username: 'Атыныз',
+      submit: 'Енгiзу'
     },
     contacts: {
       mail_to_me: 'email жиберу',

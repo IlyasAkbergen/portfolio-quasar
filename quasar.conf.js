@@ -45,7 +45,9 @@ module.exports = function (ctx) {
 
       components: [
         'QSelect',
-        'QCircularProgress'
+        'QCircularProgress',
+        'QImg',
+        'QForm'
       ],
       directives: [],
 
